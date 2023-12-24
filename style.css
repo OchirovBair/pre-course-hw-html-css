@@ -1,7 +1,16 @@
+/* 
+1. Классы не пишуться автоматически в CSS файле
+2. Правильно ли я поменял название кнопки формы с Отправить на REGISTRATION
+3. Положение галочек в списке в 3 секции относительно надписи той же строки не посередине и не понятно как взяты отступы в 30px
+4. Ширина формы не как в примере а на всю ширину, я задал самостоятельно, правильно ли я сделал?
+5. как правильно писать классы? через пробел или без
+ */
+
+
 * {
-    padding: 0;
     margin: 0;
-    block-size: border-box;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html,
@@ -23,6 +32,8 @@ button {
     background-color: transparent;
 }
 
+/* ------------------------header------------------------ */
+
 .header {
     background-color: #0A61F7;
     padding: 14px 0;
@@ -37,6 +48,8 @@ button {
     text-transform: uppercase;
 }
 
+/* ------------------------1st section------------------------ */
+
 .main-title {
     color: #363940;
     font-size: 58px;
@@ -45,36 +58,70 @@ button {
     margin-bottom: 30px;
 }
 
+.main.text {
+    margin-bottom: 40px;
+}
+
+.title {
+    color: #363940;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 43px;
+}
+
 .text {
     color: #95A1BB;
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
-    margin-bottom: 40px;
 }
 
-.main-button {
+.button {
+    border-radius: 4px;
+    background: #0A61F7;
+    width: 152px;
+    height: 51px;
     color: #FFF;
     font-size: 14px;
     font-weight: 500;
     line-height: 19.6px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
-    border-radius: 4px;
-    background: #0A61F7;
-    width: 152px;
-    height: 50px;
 }
+
+/* ------------------------2nd section------------------------ */
+
+.rates-section {
+    background: #F9FAFC;
+    padding: 100px 0;
+}
+
+.rates-section .title {
+    margin-bottom: 20px;
+}
+
+.rates-section .text {
+    margin-bottom: 40px;
+}
+
 
 .table {
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #95A1BB;
     width: 240px;
     padding: 15px 0;
     text-align: center;
+}
+
+.table-title {
+    color: #363940;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
 }
 
 .table-subtitle {
@@ -86,29 +133,22 @@ th, td {
     padding-left: 20px;
 }
 
-.table-title {
-    color: #363940;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 22px;
-}
-
 .table-link {
     color: #0A61F7;
 }
 
 .table-button {
-    border-radius: 4px;
-    border: 1px solid #0A61F7;
-    width: 140px;
-    height: 36px;
+    color: #0A61F7;
     font-size: 12px;
     font-weight: 500;
     line-height: 19.6px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
+
+    border-radius: 4px;
+    border: 1px solid #0A61F7;
+    width: 140px;
     padding: 8px 0;
-    color: #0A61F7;
 }
 
 .table-subtitle.gray {
@@ -120,6 +160,117 @@ th, td {
     color: #FFF;
 }
 
-.table-footer {
+.table-footer td {
     padding: 30px 0;
+}
+
+/* ------------------------3rd section------------------------ */
+
+.list-item {
+    color: #363940;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    list-style-image: url(./assets/images/Check1.svg);
+
+    font-size: 16px;
+    /* Этого нет в ДЗ правильно добавлять это? */
+    font-weight: 400;
+    /* -- */
+    line-height: 22px;
+    /* -- */
+}
+
+.create-account-section {
+    padding: 100px 0;
+}
+
+.create-account-section .title {
+    margin-bottom: 50px;
+}
+
+.create-account-section .text {
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+form {
+    max-width: 480px;
+    width: 100%;
+}
+
+input,
+select,
+fieldset,
+textarea {
+    border-radius: 4px;
+    border: 1px solid #95A1BB;
+    padding: 14px 15px;
+}
+
+input,
+select,
+fieldset,
+textarea,
+label,
+legend,
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+    color: #95A1BB;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    font-family: inherit;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 230px;
+    height: 50px;
+}
+
+fieldset {
+    width: 100%;
+    padding: 30px 15px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 80px;
+    resize: none;
+}
+
+form .button {
+    width: 100%;
+}
+
+select {
+    background: url(./assets/images/Arrow-down.svg) no-repeat right 15px top 50%;
+    appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url(./assets/images/Calendar.svg) no-repeat;
+}
+
+
+/* --------------------Footer------------------------ */
+
+.footer {
+    background: #0A61F7;
+    text-align: center;
+    padding: 20px 0;
+}
+
+small {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
 }
