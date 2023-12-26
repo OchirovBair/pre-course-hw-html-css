@@ -23,6 +23,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 ul {
     list-style: none;
 }
@@ -30,36 +34,22 @@ ul {
 button {
     border: none;
     background-color: transparent;
+    transition: all .2s;
+    cursor: pointer;
 }
 
-/* ------------------------header------------------------ */
-
-.header {
-    background-color: #0A61F7;
-    padding: 14px 0;
+button:hover {
+    transform: translateY(-5px);
 }
 
-.menu-link {
-    color: #FFF;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 20px;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-}
-
-/* ------------------------1st section------------------------ */
-
-.main-title {
-    color: #363940;
-    font-size: 58px;
-    font-weight: 500;
-    line-height: 68px;
-    margin-bottom: 30px;
-}
-
-.main.text {
-    margin-bottom: 40px;
+.conteiner {
+    height: 100%;
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
 }
 
 .title {
@@ -74,6 +64,67 @@ button {
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
+    margin-bottom: 40px;
+}
+
+/* ------------------------header------------------------ */
+
+.header {
+    background-color: #0A61F7;
+    padding: 14px 0;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+}
+
+.menu-link {
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+/* ------------------------1st section------------------------ */
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}
+
+.main-img {
+    align-self: flex-end;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-title {
+    color: #363940;
+    font-size: 58px;
+    font-weight: 500;
+    line-height: 68px;
+    margin-bottom: 30px;
+}
+
+.main .text {
+    margin-bottom: 40px;
+    max-width: 380px;
+
 }
 
 .button {
@@ -90,6 +141,12 @@ button {
 }
 
 /* ------------------------2nd section------------------------ */
+
+.rates-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .rates-section {
     background: #F9FAFC;
@@ -166,6 +223,11 @@ td {
 
 /* ------------------------3rd section------------------------ */
 
+.account-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 .list-item {
     color: #363940;
     margin-left: 30px;
@@ -196,6 +258,15 @@ td {
 form {
     max-width: 480px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stack,
+fieldset {
+    display: flex;
+    column-gap: 30px;
 }
 
 input,
@@ -233,11 +304,18 @@ input[type="date"],
 select {
     width: 230px;
     height: 50px;
+    flex-grow: 1;
 }
 
 fieldset {
     width: 100%;
     padding: 30px 15px;
+}
+
+.fields-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 textarea {
@@ -257,6 +335,10 @@ select {
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     background: url(./assets/images/Calendar.svg) no-repeat;
+}
+
+input[type="checkbox"], input[type="radio"], input[type="date"], select {
+    cursor: pointer;
 }
 
 
