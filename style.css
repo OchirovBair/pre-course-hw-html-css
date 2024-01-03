@@ -228,19 +228,42 @@ td {
     justify-content: space-between;
 }
 
-.list-item {
+/* .list-item {
+    display: flex;
+    align-items: center;
     color: #363940;
     margin-left: 30px;
     margin-bottom: 15px;
     list-style-image: url(./assets/images/Check1.svg);
+} */
 
-    font-size: 16px;
-    /* Этого нет в ДЗ правильно добавлять это? */
-    font-weight: 400;
-    /* -- */
-    line-height: 22px;
-    /* -- */
-}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Устанавливаем направление flex-контейнера на вертикальное */
+  }
+  
+  .list-item {
+    display: flex;
+    align-items: center; /* Выравнивание по центру по вертикали */
+    margin-bottom: 10px; /* Просто для визуального отступа между элементами списка */
+  }
+  
+  .list-item::before {
+    content: ""; /* Пустой контент для использования псевдоэлемента ::before */
+    display: inline-block;
+    width: 20px; /* Ширина маркера (изображения) */
+    height: 20px; /* Высота маркера (изображения) */
+    margin-right: 10px; /* Отступ между маркером и текстом */
+    background: url(./assets/images/Check1.svg) no-repeat center center; /* Фоновое изображение маркера */
+    background-size: contain; /* Размер фонового изображения маркера */
+  }
+  
+
+
+
 
 .create-account-section {
     padding: 100px 0;
